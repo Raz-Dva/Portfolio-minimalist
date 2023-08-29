@@ -6,7 +6,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        clean: true
+        clean: true,
     },
     module: {
         rules: [
@@ -17,6 +17,13 @@ module.exports = {
                     'css-loader',
                     'sass-loader',
                 ],
+            },
+            {
+                test: /\.(gif|png|avif|jpe?g)$/,
+                type: 'asset/resource', // Используем новый синтаксис для обработки изображений
+                generator: {
+                    filename: 'assets/images/[name][ext]' // Указываем путь для сохранения изображений
+                }
             },
         ],
     },

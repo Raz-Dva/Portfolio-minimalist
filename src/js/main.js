@@ -7,7 +7,7 @@ parallaxBlock.style.height = '120%';
 
 const oversizedBlock = document.querySelector('#block-parallax');
 const relativeHeightDifference = ((oversizedBlock.offsetHeight - initialBlockHeight) / oversizedBlock.offsetHeight).toFixed(2);
-    console.log(relativeHeightDifference);
+    // console.log(relativeHeightDifference);
 
 function updateParallax(){
     const scrollDistance = window.scrollY;
@@ -15,6 +15,5 @@ function updateParallax(){
 
     parallaxBlock.style.transform = `translateY(${relativeScrollDistance * relativeHeightDifference}%)`
 }
-
 
 window.addEventListener("scroll", updateParallax)
