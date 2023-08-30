@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './index.js',
+    devtool: 'source-map',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -20,9 +21,9 @@ module.exports = {
             },
             {
                 test: /\.(gif|png|avif|jpe?g)$/,
-                type: 'asset/resource', // Используем новый синтаксис для обработки изображений
+                type: 'asset/resource',
                 generator: {
-                    filename: 'assets/images/[name][ext]' // Указываем путь для сохранения изображений
+                    filename: 'assets/images/[name][ext]'
                 }
             },
         ],

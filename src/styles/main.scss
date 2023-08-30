@@ -46,6 +46,10 @@ main {
   object-fit: cover;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .text-uppercase {
   text-transform: uppercase;
 }
@@ -58,10 +62,14 @@ main {
   font-weight: lighter;
 }
 
+.margin_auto {
+  margin: 0 auto;
+}
+
 .main-container {
   width: 1000px;
   margin: 0 auto;
-  background-color: rgba(27, 33, 47, .4);
+  background-color: rgba(47, 40, 27, .28);
   padding: 0 200px;
 }
 
@@ -69,6 +77,8 @@ main {
   font-size: $section-header-font-size;
   text-transform: uppercase;
   color: $second_font_color;
+  line-height: 1.2;
+  margin-bottom: 80px;
 }
 
 
@@ -84,14 +94,15 @@ main {
   z-index: -1;
 }
 
-.margin_auto {
-  margin: 0 auto;
+.section-text {
+
 }
 
 //----- HEADER -----------
 header {
   padding:100px 0;
 }
+
 .my-photo {
   $width: 250px;
   width: $width;
@@ -121,5 +132,14 @@ header {
 
 //----- ABOUT --------
 
+.about-text{
+  float: right;
+  width: 50%;
+}
 
+.about-text-header {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
 
