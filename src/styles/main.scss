@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'flex';
 
+@import '../fonts/icon-fonts/styles.css';
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Manrope:wght@200;400;700;900&family=Open+Sans&family=Roboto&family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
 /* A simple CSS reset */
@@ -13,7 +14,10 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul, li {
 }
 
 body {
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 18px;
+  box-sizing: border-box;
+  position: relative;
 }
 
 ol, ul {
@@ -30,14 +34,6 @@ a {
   text-decoration: none;
   font-family: 'Manrope', sans-serif;
   color: $main_font_color;
-}
-
-body {
-  position: relative;
-}
-
-main {
-  min-height: 4000px;
 }
 
 .object-fit-cover {
@@ -66,11 +62,25 @@ main {
   margin: 0 auto;
 }
 
+.left-block {
+  float: left;
+  width: 50%;
+}
+
+.right-block {
+  float: right;
+  width: 50%;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .main-container {
   width: 1000px;
   margin: 0 auto;
   background-color: rgba(47, 40, 27, .28);
-  padding: 0 200px;
+  padding: 0 200px  60px;
 }
 
 .section-header {
@@ -78,11 +88,11 @@ main {
   text-transform: uppercase;
   color: $second_font_color;
   line-height: 1.2;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 
-#block-parallax {
+#parallax {
   background: url('../images/main-background.jpg');
   height: 100%;
   left: 0;
@@ -94,13 +104,13 @@ main {
   z-index: -1;
 }
 
-.section-text {
-
+.section-mb {
+  margin-bottom: 120px;
 }
 
 //----- HEADER -----------
 header {
-  padding:100px 0;
+  padding: 50px 0 70px;
 }
 
 .my-photo {
@@ -118,6 +128,12 @@ header {
 .header-menu-items > li {
   margin: 5px;
   font-weight: bolder;
+  opacity: .5;
+}
+
+.header-menu-items > li:focus,
+.header-menu-items > li:hover {
+  opacity: 1;
 }
 
 .header-menu-items > li::before {
@@ -132,14 +148,110 @@ header {
 
 //----- ABOUT --------
 
-.about-text{
-  float: right;
-  width: 50%;
-}
-
 .about-text-header {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 30px;
 }
 
+.section-header-count {
+  font-weight: 200;
+  margin-left: 40px;
+  opacity: .5;
+}
+
+//------- SKILLS ------
+
+.skill-items > li {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.skills-text {
+  padding-right: 10%;
+}
+
+.skill-items {
+  padding-left: 10%;
+}
+
+//-------- EXPERIENCE --------
+.job-title {
+  width: 40%;
+}
+
+.job-title > p {
+  margin-top: 5px;
+}
+
+.experience {
+  margin-bottom: 50px;
+}
+
+.responsibilities-box {
+  width: 50%;
+}
+
+.projects-list > li,
+.work-period {
+  font-weight: 200;
+  font-style: italic;
+}
+
+.job-title .projects,
+.job-title .company-name {
+  margin-top: 15px;
+}
+
+.responsibility-list > li {
+  line-height: 1.2;
+  margin-top: 15px;
+}
+
+//-------- CONTACT  --------
+.contact-box {
+  overflow: hidden;
+}
+
+.social-links {
+  width: 50%;
+  text-align: left;
+}
+
+.social-links > li > a span{
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
+.social-links > li {
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  display: inline-block;
+}
+
+.social-links i[class^="icon-"]:before,
+.social-links i[class*=" icon-"]:before {
+  font-size: 28px;
+}
+
+//--------- FOOTER --------
+.contacts > p,
+.contacts > a {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.copyright {
+  margin-top: 20px;
+}
+
+//------- MEDIA QUERY ------
+@media (max-width: 1417px) {
+  .main-container {
+    width: auto;
+    padding: 0 100px 60px;
+  }
+}

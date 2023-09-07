@@ -1,16 +1,29 @@
-const mainHeight = document.querySelector('main');
-const indexFactor = ((mainHeight.offsetHeight - window.innerHeight)/100);
-const parallaxBlock = document.querySelector('#block-parallax');
-const initialBlockHeight = parallaxBlock.offsetHeight;
+const body = document.querySelector('.main-container');
+const parallaxBlock = document.querySelector('#parallax');
+const initialParallaxHeight = parallaxBlock.offsetHeight;
 
 parallaxBlock.style.height = '120%';
 
-const oversizedBlock = document.querySelector('#block-parallax');
-const relativeHeightDifference = ((oversizedBlock.offsetHeight - initialBlockHeight) / oversizedBlock.offsetHeight).toFixed(2);
+const oversizedParallax = document.querySelector('#parallax');
+let indexFactor, relativeHeightDifference;
 
-export function updateParallax(){
+
+function setHeightDifference() {
+    indexFactor = ((body.offsetHeight - window.innerHeight) / 100);
+    relativeHeightDifference = +((oversizedParallax.offsetHeight - initialParallaxHeight) / oversizedParallax.offsetHeight).toFixed(5);
+}
+
+setHeightDifference();
+
+document.fonts.ready.then(() => {
+    setHeightDifference();
+});
+
+export function updateParallaxPosition() {
     const scrollDistance = window.scrollY;
     const relativeScrollDistance = scrollDistance / indexFactor;
 
-    parallaxBlock.style.transform = `translateY(${relativeScrollDistance * relativeHeightDifference}%)`
+    parallaxBlock.style.transform = `translateY(${relativeScrollDistance * Number(relativeHeightDifference)}%)`;
 }
+
+

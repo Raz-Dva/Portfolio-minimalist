@@ -1,13 +1,10 @@
-import { updateParallax } from './parallax-effect';
+import { updateParallaxPosition} from './parallax-effect';
+import {headerCounter} from './header-counter';
 
-window.addEventListener("scroll", updateParallax)
+window.addEventListener("scroll", updateParallaxPosition);
+window.addEventListener("resize", updateParallaxPosition);
 
-const headers = document.getElementsByClassName('section-header');
-let counter = 0;
+headerCounter();
 
-Array.from(headers).forEach((el) => {
-    let number = counter < 10 ? `0${counter}` : counter.toString();
 
-    el.textContent = `${el.textContent} ${number}`;
-    counter++;
-})
+
