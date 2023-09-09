@@ -173,7 +173,7 @@ header {
 }
 
 .skill-items {
-  padding-left: 10%;
+  padding-left: 8%;
 }
 
 //-------- EXPERIENCE --------
@@ -253,5 +253,65 @@ header {
   .main-container {
     width: auto;
     padding: 0 100px 60px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .left-block,
+  .right-block {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .main-container {
+    padding: 0 50px 50px;
+  }
+
+  .social-links {
+    width: 100%;
+  }
+
+  .job-title, .responsibilities-box {
+    width: 100%;
+  }
+
+  .contacts > p, .contacts > a {
+    margin: 0 8px;
+  }
+
+}
+
+@media (max-width: 575.98px) {
+  .main-container {
+    padding: 0 16px 40px;
+  }
+
+  .section-header {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .my-photo {
+    display: none;
+  }
+
+  .contacts {
+    flex-direction: column;
+  }
+
+  .skill-items {
+    padding-left: 0;
+  }
+
+  .skill-items > li{
+    width: 48%;
+  }
+
+  .section-mb {
+    margin-bottom: 40px;
+  }
+
+  .experience {
+    flex-direction: column;
   }
 }

@@ -20,6 +20,8 @@ document.fonts.ready.then(() => {
 });
 
 export function updateParallaxPosition() {
+    setHeightDifference();
+
     const scrollDistance = window.scrollY;
     const relativeScrollDistance = scrollDistance / indexFactor;
 
